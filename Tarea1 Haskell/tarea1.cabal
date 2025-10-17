@@ -1,0 +1,54 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.37.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           tarea1
+version:        0.1.0.0
+synopsis:       Tarea 1 - Haskell SOS
+description:    Proyecto de ejemplo para Tarea 1 en Haskell.
+category:       Education
+author:         Your Name
+maintainer:     your@email.com
+license:        MIT
+build-type:     Simple
+
+library
+  exposed-modules:
+      Main
+      Tarea1
+  other-modules:
+      Paths_tarea1
+  hs-source-dirs:
+      src
+  build-depends:
+      HUnit
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
+executable tarea1-exe
+  main-is: Main.hs
+  other-modules:
+      Tarea1
+      Paths_tarea1
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      HUnit
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
+test-suite tarea1-test
+  type: exitcode-stdio-1.0
+  main-is: Test.hs
+  other-modules:
+      Paths_tarea1
+  hs-source-dirs:
+      test
+  build-depends:
+      HUnit
+    , base >=4.7 && <5
+    , tarea1
+  default-language: Haskell2010
