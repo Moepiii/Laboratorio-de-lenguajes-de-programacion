@@ -1,0 +1,24 @@
+ITEM: libro
+DESC: Un libro misterioso con páginas en blanco.
+---
+ITEM: llaves
+DESC: Unas llaves brillantes y antiguas.
+---
+ITEM: cuchillo
+DESC: Un cuchillo afilado de cocina.
+---
+SALA: Biblioteca
+DESC: Una biblioteca llena de estanterías polvorientas. Hay una puerta al oeste.
+SALIDA: Oeste -> Sala de Estar
+OBJETO: libro
+---
+SALA: Sala de Estar
+DESC: Una acogedora sala de estar con muebles antiguos. Hay una puerta al norte y otra al este.
+SALIDA: Norte -> Cocina
+SALIDA: Este -> Biblioteca
+OBJETO: llaves
+---
+SALA: Cocina
+DESC: Una cocina desordenada con ollas y sartenes por todas partes. Hay una puerta al sur.
+SALIDA: Sur -> Sala de Estar
+OBJETO: cuchillo

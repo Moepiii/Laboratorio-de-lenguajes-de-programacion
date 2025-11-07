@@ -1,0 +1,33 @@
+name: proyecto-aventura
+version: 0.1.0.0
+description: "Motor de Aventura de Texto"
+author: "TuNombre"
+maintainer: "tu@email.com"
+copyright: "2025"
+license: BSD3
+
+dependencies:
+- base >= 4.7 && < 5
+- containers
+
+library:
+  source-dirs: src
+  exposed-modules:
+    - Engine.Types
+    - Engine.Parser
+    - Engine.Core
+    - Engine.Persistence
+
+executables:
+  proyecto-aventura-exe:
+    main: Main.hs
+    source-dirs: app
+    dependencies:
+      - proyecto-aventura
+
+tests:
+  proyecto-aventura-test:
+    main: Spec.hs
+    source-dirs: test
+    dependencies:
+      - proyecto-aventura
