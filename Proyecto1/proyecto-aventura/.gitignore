@@ -1,0 +1,35 @@
+# Stack and Cabal build artifacts
+.stack-work/
+dist/
+dist-newstyle/
+
+# Executables and binaries
+*.exe
+*.exe.heap
+*.exe.eventlog
+*.so
+*.dyn_o
+*.dyn_hi
+
+# Haskell compilation artifacts
+*.hi
+*.o
+*.prof
+*.aux
+*.hp
+*.ps
+
+# Cabal/Stack metadata
+cabal.project.local
+cabal.project.local~
+.stack-work-plan
+
+# GHC environment files
+.ghc.environment.*
+
+# IDE / editor files
+*.swp
+*~
+.DS_Store
+.idea/
+.vscode/
