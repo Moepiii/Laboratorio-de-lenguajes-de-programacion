@@ -11,6 +11,8 @@ parseCommand input = do
     "ir" -> Ir <$> parseDirectionFrom rest
     "mirar" -> expectNoArgs "mirar" rest Mirar
     "tomar" -> parseItemArg "tomar" rest Tomar
+    "coger" -> parseItemArg "coger" rest Tomar
+     -- Note: 'coger' is treated as an alias for 'tomar'
     "inventario" -> expectNoArgs "inventario" rest Inventario
     "inv" -> expectNoArgs "inv" rest Inv
     "salir" -> expectNoArgs "salir" rest Salir
