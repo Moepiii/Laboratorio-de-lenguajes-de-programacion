@@ -1,8 +1,10 @@
 name: proyecto-aventura
-version: 0.1.0.0
+version: 0.0.0.2
 description: "Motor de Aventura de Texto"
-author: "TuNombre"
-maintainer: "tu@email.com"
+authors:
+  - "Baudilio Velasquez <18-10665@usb.ve>"
+  - "Rafael Valera <16-11202@usb.ve>"
+maintainer: "18-10665@usb.ve, 16-11202@usb.ve"
 copyright: "2025"
 license: BSD3
 
