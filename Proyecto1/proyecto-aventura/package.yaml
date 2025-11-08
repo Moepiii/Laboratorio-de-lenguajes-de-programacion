@@ -1,6 +1,6 @@
 name: proyecto-aventura
-version: 0.0.0.2
-description: "Motor de Aventura de Texto"
+version: 0.1.0.1
+description: "Juego de Aventura de Texto"
 authors:
   - "Baudilio Velasquez <18-10665@usb.ve>"
   - "Rafael Valera <16-11202@usb.ve>"
