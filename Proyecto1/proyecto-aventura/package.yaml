@@ -31,3 +31,4 @@ tests:
     source-dirs: test
     dependencies:
       - proyecto-aventura
+      - hspec >= 2.7

@@ -14,12 +14,10 @@ data Command
   = Ir Direction
   | Mirar
   | Tomar String
-  | Coger String
   | Inventario
   | Inv
   | Salir
   | Leer String -- NUEVO: leer objetos
-  | ComandoInvalido String
   deriving (Show, Eq)
 
 -- Objetos

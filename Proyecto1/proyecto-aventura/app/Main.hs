@@ -2,7 +2,6 @@
 
 module Main where
 
-import Control.Monad
 import Data.Map qualified as Map
 import Engine.Core
 import Engine.Parser
@@ -24,27 +23,19 @@ main = do
     Right (rooms, items) -> do
       putStrLn "Mundo cargado exitosamente!"
 
-      -- Encontrar sala inicial (primera sala en el mapa)
-      let startRoom = case Map.keys rooms of
-            [] -> error "No hay salas en el mundo"
-            (firstRoom : _) -> firstRoom
+      case Map.lookupMin rooms of
+        Nothing -> putStrLn "Error: el archivo 'mundo.txt' no define salas."
+        Just (startRoom, startRoomData) -> do
+          let initialState =
+                GameState
+                  { currentRoom = startRoom,
+                    playerInventory = [],
+                    worldRooms = rooms,
+                    worldItems = items
+                  }
 
-      -- Estado inicial
-      let initialState =
-            GameState
-              { currentRoom = startRoom,
-                playerInventory = [],
-                worldRooms = rooms,
-                worldItems = items
-              }
-
-      -- Mostrar sala inicial
-      case Map.lookup startRoom rooms of
-        Just room -> putStrLn $ "\n" ++ roomDesc room
-        Nothing -> putStrLn "Error: Sala inicial no encontrada"
-
-      -- Iniciar bucle del juego
-      gameLoop initialState
+          putStrLn $ "\n" ++ roomDesc startRoomData
+          gameLoop initialState
 
 gameLoop :: GameState -> IO ()
 gameLoop state = do
@@ -52,20 +43,15 @@ gameLoop state = do
   hFlush stdout
   input <- getLine
 
-  if null input
-    then gameLoop state
-    else do
-      let cmd = parseCommand input
+  case parseCommand input of
+    Left errMsg -> do
+      putStrLn errMsg
+      gameLoop state
+    Right command -> do
+      let (message, newState) = processCommand command state
 
-      case cmd of
-        Nothing -> do
-          putStrLn "Comando no válido. Comandos disponibles: ir <dirección>, mirar, tomar <objeto>, coger <objeto>, leer <objeto>, inventario, salir"
-          gameLoop state
-        Just command -> do
-          let (message, newState) = processCommand command state
+      putStrLn message
 
-          putStrLn message
-
-          case command of
-            Salir -> return ()
-            _ -> gameLoop newState
+      case command of
+        Salir -> return ()
+        _ -> gameLoop newState

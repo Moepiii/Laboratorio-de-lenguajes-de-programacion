@@ -12,12 +12,10 @@ processCommand cmd state = case cmd of
   Ir dir -> processMove dir state
   Mirar -> processLook state
   Tomar obj -> processTake obj state
-  Coger obj -> processTake obj state
   Inventario -> processInventory state
   Inv -> processInventory state
   Salir -> ("¡Hasta la próxima!", state)
   Leer obj -> processRead obj state -- NUEVO: procesar comando leer
-  ComandoInvalido msg -> (msg, state)
 
 processMove :: Direction -> GameState -> (String, GameState)
 processMove dir state =

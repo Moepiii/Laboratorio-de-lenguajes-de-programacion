@@ -50,5 +50,6 @@ test-suite proyecto-aventura-test
   build-depends:
       base >=4.7 && <5
     , containers
+    , hspec >=2.7
     , proyecto-aventura
   default-language: Haskell2010
