@@ -2,7 +2,6 @@
 .stack-work/
 dist/
 dist-newstyle/
-*.cabal
 
 # Executables and binaries
 *.exe
