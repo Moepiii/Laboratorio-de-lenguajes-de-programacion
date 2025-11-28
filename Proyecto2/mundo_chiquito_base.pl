@@ -1,4 +1,4 @@
-% Rafael y baulio
+% Rafa y bau
 % Esta mensaje es para ti cuando lo veas bau, luego lo quitas
 % si va a agregar un moustruo debes hacerlo con "asi" ej "Dragon" ( una sola comilla simple nose porque se ponen 2)
 % esto porque si pones el nombre y ya lo guarda como variable y luego tira es una direccion como _1222 coasa asi del resto pruebalo 
